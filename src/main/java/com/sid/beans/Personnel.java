@@ -19,9 +19,9 @@ public class Personnel implements Serializable{
 	
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
-private Long IdPersonnel;
-private String NomPersonnel;
-private String Fonction;
+private Long idPersonnel;
+private String nomPersonnel;
+private String fonction;
 
 @ManyToOne
 @JoinColumn(name="idAgence")
@@ -34,33 +34,33 @@ public Personnel() {
 
 public Personnel(Long idPersonnel, String nomPersonnel, String fonction) {
 	super();
-	IdPersonnel = idPersonnel;
-	NomPersonnel = nomPersonnel;
-	Fonction = fonction;
+	this.idPersonnel = idPersonnel;
+	this.nomPersonnel = nomPersonnel;
+	this.fonction = fonction;
 }
 
 public Long getIdPersonnel() {
-	return IdPersonnel;
+	return idPersonnel;
 }
 
 public void setIdPersonnel(Long idPersonnel) {
-	IdPersonnel = idPersonnel;
+	this.idPersonnel = idPersonnel;
 }
 
 public String getNomPersonnel() {
-	return NomPersonnel;
+	return nomPersonnel;
 }
 
 public void setNomPersonnel(String nomPersonnel) {
-	NomPersonnel = nomPersonnel;
+	this.nomPersonnel = nomPersonnel;
 }
 
 public String getFonction() {
-	return Fonction;
+	return fonction;
 }
 
 public void setFonction(String fonction) {
-	Fonction = fonction;
+	this.fonction = fonction;
 }
 
 public Agence getAgence() {
