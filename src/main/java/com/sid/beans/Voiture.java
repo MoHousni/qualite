@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Voiture implements Serializable {
 
@@ -27,6 +29,7 @@ public class Voiture implements Serializable {
 	private boolean etat;
 	private String image;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="pk.voiture")
 	private List<Louer> locations = new ArrayList<>();
 	

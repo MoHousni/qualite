@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Client implements Serializable{
 	
@@ -27,6 +29,7 @@ public class Client implements Serializable{
 	private String telClt;
 	private String scanId;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="pk.client")
 	private List<Louer> locations = new ArrayList<>();
 	

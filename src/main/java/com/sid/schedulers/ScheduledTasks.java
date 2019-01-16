@@ -37,7 +37,6 @@ public class ScheduledTasks {
 
 	        sendFromGMail(from, pass, to, subject, body);
 		}
-		System.out.println("test");
 	}
 	
 	
