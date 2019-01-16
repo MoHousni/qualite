@@ -1,6 +1,7 @@
 package com.sid.beans;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,8 +18,8 @@ public class Calendrie implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	private long idCalendrie;
-	private String dateDebut;
-	private String dateFin;
+	private LocalDate dateDebut;
+	private LocalDate dateFin;
 	@OneToMany(mappedBy="calendrie")
 	private Set<Louer> locations =new HashSet<>();
 	
@@ -36,25 +37,25 @@ public class Calendrie implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Calendrie(String dateDebut, String dateFin) {
+	public Calendrie(LocalDate dateDebut, LocalDate dateFin) {
 		super();
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
 
-	public String getDateDebut() {
+	public LocalDate getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(String dateDebut) {
+	public void setDateDebut(LocalDate dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	public String getDateFin() {
+	public LocalDate getDateFin() {
 		return dateFin;
 	}
 
-	public void setDateFin(String dateFin) {
+	public void setDateFin(LocalDate dateFin) {
 		this.dateFin = dateFin;
 	}
 

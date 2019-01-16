@@ -2,10 +2,12 @@ package com.sid.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Louer implements Serializable {
@@ -19,8 +21,9 @@ public class Louer implements Serializable {
 	private double prixTT;
 	private int nbrJour;
 	private String scanBank;
+	private boolean etatDeRent=true; // par ce champ on peut savoir si le client posséde en cour la voiture
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="idCalendrie")
 	private Calendrie calendrie;
 	
@@ -81,4 +84,22 @@ public class Louer implements Serializable {
 	public void setVoiture(Voiture voiture) {
 		this.pk.setVoiture(voiture);
 	}
+
+	public Calendrie getCalendrie() {
+		return calendrie;
+	}
+
+	public void setCalendrie(Calendrie calendrie) {
+		this.calendrie = calendrie;
+	}
+
+	public boolean isEtatDeRent() {
+		return etatDeRent;
+	}
+
+	public void setEtatDeRent(boolean etatDeRent) {
+		this.etatDeRent = etatDeRent;
+	}
+	
+	
 }
